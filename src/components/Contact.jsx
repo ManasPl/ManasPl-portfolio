@@ -9,7 +9,7 @@ export default function Contact() {
   return (
     <section id="contact">
       <div className="wrap contact-inner">
-        <div className="sectionlabel reveal" style={{ justifyContent: 'center', display: 'flex' }} ref={labelRef}>// 04</div>
+        <div className="sectionlabel reveal" style={{ justifyContent: 'center', display: 'flex' }} ref={labelRef}>// stage: deploy</div>
         <h2 className="reveal" ref={headingRef}>Let's build something reliable.</h2>
         <p className="reveal" ref={textRef}>
           Open to backend and distributed-systems roles — in ad-tech/retail-media or

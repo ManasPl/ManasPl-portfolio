@@ -42,7 +42,7 @@ export default function Skills() {
   return (
     <section id="skills">
       <div className="wrap">
-        <div className="sectionlabel">// 03</div>
+        <div className="sectionlabel">// stage: skills</div>
         <h2 className="sectiontitle reveal" ref={titleRef}>Skills</h2>
         {GROUPS.map((g) => <Group group={g} key={g.heading} />)}
       </div>

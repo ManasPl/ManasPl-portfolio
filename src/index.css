@@ -63,32 +63,57 @@ h1 .accent{color:var(--amber);}
 }
 .subhead b{color:var(--text);font-weight:600;}
 
-/* STATUS STRIP */
-.statusbar{
+/* ENV LINE + FLOW DIAGRAM (signature element) */
+.envline{
+  font-family:var(--mono);font-size:11.5px;color:var(--muted);
+  letter-spacing:0.4px;margin-bottom:18px;display:flex;align-items:center;gap:8px;
+}
+.flowdiagram{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-  gap:1px;
-  background:var(--border);
-  border:1px solid var(--border);
-  border-radius:8px;
-  overflow:hidden;
+  grid-template-columns:repeat(5,1fr);
+  gap:10px;
   margin-bottom:8px;
 }
-.metric{background:var(--panel);padding:16px 18px;}
-.metric .label{
-  font-family:var(--mono);font-size:10.5px;color:var(--muted);
-  letter-spacing:0.8px;text-transform:uppercase;margin-bottom:6px;
-  display:flex;align-items:center;gap:6px;
+.fnode{
+  background:var(--panel);border:1px solid var(--border);border-radius:8px;
+  padding:14px 14px;position:relative;
+  display:flex;flex-direction:column;gap:8px;
 }
-.metric .mdot{width:5px;height:5px;border-radius:50%;background:var(--teal);flex-shrink:0;}
-.metric .value{font-family:var(--mono);font-size:19px;font-weight:600;color:var(--amber);}
-.statuscaption{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:10px;}
+.fnode:not(:last-child)::after{
+  content:'→';position:absolute;right:-16px;top:50%;
+  transform:translateY(-50%);color:var(--border);font-size:14px;z-index:1;
+}
+.fnode-step{
+  font-family:var(--mono);font-size:10px;color:var(--muted);
+  letter-spacing:1px;
+}
+.fnode-title{
+  font-family:var(--mono);font-size:12px;color:var(--text);font-weight:600;
+  line-height:1.35;
+}
+.fnode-impact{border-color:rgba(242,169,59,0.25);}
+.fnode-impact-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;}
+.fchip{
+  font-family:var(--mono);font-size:10px;color:var(--teal);
+  background:rgba(63,184,175,0.08);border:1px solid rgba(63,184,175,0.25);
+  padding:2px 7px;border-radius:4px;white-space:nowrap;
+}
+.fchip-amber{
+  color:var(--amber);background:rgba(242,169,59,0.1);
+  border-color:rgba(242,169,59,0.35);font-weight:600;
+}
+.statuscaption{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:10px;margin-bottom:8px;}
+
+@media (max-width: 900px){
+  .flowdiagram{grid-template-columns:repeat(3,1fr);}
+  .fnode:nth-child(3n)::after{display:none;}
+}
 
 .cta-row{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap;}
 .btn{
   font-family:var(--mono);font-size:13px;font-weight:500;
   padding:11px 20px;border-radius:6px;border:1px solid var(--border);
-  transition:all .2s;display:inline-block;
+  transition:all .2s;display:inline-block;cursor:pointer;
 }
 .btn-primary{background:var(--amber);color:var(--bg);border-color:var(--amber);}
 .btn-primary:hover{background:#ffbe5c;}
@@ -103,6 +128,8 @@ h1 .accent{color:var(--amber);}
 .sectiontitle{font-size:26px;font-weight:700;margin-bottom:36px;letter-spacing:-0.3px;}
 section{padding:64px 0;border-top:1px solid var(--border);}
 
+.about-text{color:var(--muted);font-size:15.5px;max-width:640px;margin-bottom:16px;line-height:1.7;}
+
 /* EXPERIENCE */
 .job{margin-bottom:40px;}
 .job:last-child{margin-bottom:0;}
@@ -110,6 +137,7 @@ section{padding:64px 0;border-top:1px solid var(--border);}
 .job-role{font-size:18px;font-weight:700;}
 .job-date{font-family:var(--mono);font-size:12px;color:var(--muted);}
 .job-org{color:var(--teal);font-size:14px;font-weight:600;margin-bottom:12px;}
+.job-intro{color:var(--muted);font-size:14px;line-height:1.6;margin-bottom:14px;max-width:640px;}
 .job ul{list-style:none;}
 .job li{position:relative;padding-left:20px;margin-bottom:9px;color:var(--muted);font-size:15px;}
 .job li::before{content:"▸";position:absolute;left:0;color:var(--amber);font-size:13px;}
@@ -118,37 +146,13 @@ section{padding:64px 0;border-top:1px solid var(--border);}
 /* PROJECTS */
 .projects{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
 @media(max-width:640px){.projects{grid-template-columns:1fr;}}
-
-/* MOBILE FIXES */
-@media (max-width: 600px){
-  .wrap{padding:0 18px;}
-  nav .wrap{height:auto;padding:12px 18px;flex-wrap:wrap;row-gap:8px;}
-  .navlinks{gap:16px;font-size:11.5px;flex-wrap:wrap;row-gap:6px;}
-  .hero{padding:48px 0 40px;}
-  h1{font-size:clamp(28px,8vw,40px);}
-  .subhead{font-size:16px;}
-  .statusbar{grid-template-columns:1fr 1fr;}
-  .metric{padding:14px;}
-  .metric .value{font-size:16px;}
-  .cta-row{gap:10px;}
-  .btn{padding:10px 16px;font-size:12.5px;}
-  section{padding:44px 0;}
-  .sectiontitle{font-size:22px;margin-bottom:26px;}
-  .job-head{flex-direction:column;align-items:flex-start;gap:2px;}
-  .projects{gap:12px;}
-  .contact-links{gap:10px;}
-}
-
-@media (max-width: 380px){
-  .navlinks{gap:10px;font-size:10.5px;}
-  .statusbar{grid-template-columns:1fr;}
-}
 .card{
   background:var(--panel);border:1px solid var(--border);border-radius:10px;
   padding:22px;transition:border-color .2s, transform .2s;
 }
 .card:hover{border-color:var(--teal);transform:translateY(-2px);}
 .card h3{font-size:16px;font-weight:700;margin-bottom:8px;}
+.card h3 a:hover{text-decoration:underline;text-decoration-color:var(--teal);}
 .card p{font-size:13.5px;color:var(--muted);margin-bottom:14px;}
 .stack{display:flex;flex-wrap:wrap;gap:6px;}
 .chip{
@@ -193,3 +197,26 @@ footer{
 }
 
 a:focus-visible, button:focus-visible{outline:2px solid var(--teal);outline-offset:2px;}
+
+/* MOBILE FIXES */
+@media (max-width: 600px){
+  .wrap{padding:0 18px;}
+  nav .wrap{height:auto;padding:12px 18px;flex-wrap:wrap;row-gap:8px;}
+  .navlinks{gap:16px;font-size:11.5px;flex-wrap:wrap;row-gap:6px;}
+  .hero{padding:48px 0 40px;}
+  h1{font-size:clamp(28px,8vw,40px);}
+  .subhead{font-size:16px;}
+  .flowdiagram{grid-template-columns:1fr;}
+  .fnode::after{display:none;}
+  .cta-row{gap:10px;}
+  .btn{padding:10px 16px;font-size:12.5px;}
+  section{padding:44px 0;}
+  .sectiontitle{font-size:22px;margin-bottom:26px;}
+  .job-head{flex-direction:column;align-items:flex-start;gap:2px;}
+  .projects{gap:12px;}
+  .contact-links{gap:10px;}
+}
+
+@media (max-width: 380px){
+  .navlinks{gap:10px;font-size:10.5px;}
+}
