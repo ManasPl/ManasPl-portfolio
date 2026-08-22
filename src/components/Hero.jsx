@@ -56,7 +56,7 @@ const FLOW_NODES = [
 // import.meta.env.BASE_URL resolves to the Vite `base` config value at build
 // time (e.g. '/ManasPl-portfolio/' on GitHub Pages, '/' elsewhere) — this
 // keeps the resume link working regardless of where the site is deployed.
-const RESUME_URL = `${import.meta.env.BASE_URL}ManasPal_Resume.pdf`
+const RESUME_URL = `${import.meta.env.BASE_URL}Manas_Pal_Resume.pdf`
 
 export default function Hero() {
   return (
