@@ -59,7 +59,7 @@ export default function Projects() {
   return (
     <section id="projects">
       <div className="wrap">
-        <div className="sectionlabel">// 02</div>
+        <div className="sectionlabel">// stage: projects</div>
         <h2 className="sectiontitle reveal" ref={titleRef}>Projects</h2>
         <div className="projects">
           {PROJECTS.map((p) => <ProjectCard p={p} key={p.title} />)}
