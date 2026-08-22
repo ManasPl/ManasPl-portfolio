@@ -22,7 +22,7 @@ Outputs a static site to `dist/` — this is what you deploy.
 
 ## Important: the resume PDF download
 
-`public/ManasPal_Resume_Revised.pdf` is the file the "Resume ↓" button links to.
+`public/Manas_Pal_Resume.pdf` is the file the "Resume ↓" button links to.
 Vite copies everything in `public/` straight into the build output, so:
 
 - **To update your resume**, just replace this file with the same filename
