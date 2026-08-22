@@ -58,7 +58,7 @@ prefixed with `/ManasPl-portfolio/` and 404.
 
 ```
 public/
-  ManasPal_Resume_Revised.pdf   ← swap this file to update your resume
+  Manas_Pal_Resume.pdf   ← swap this file to update your resume
 src/
   components/
     Nav.jsx
