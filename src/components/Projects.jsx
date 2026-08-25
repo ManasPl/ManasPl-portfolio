@@ -3,10 +3,10 @@ import useReveal from '../useReveal.js'
 const PROJECTS = [
   {
     title: 'Hate Speech Detection — Hindi',
-    desc: 'Fine-tuned DistilBERT on the HASOC dataset for Hindi social-media sentiment/hate-speech classification, achieving 84% accuracy. Training pipeline in PyTorch, predictions served via React.',
-    stack: ['DistilBERT', 'PyTorch', 'React'],
+    desc: 'Fine-tuned DistilBERT on the HASOC dataset for Hindi social-media sentiment/hate-speech classification, achieving 80.5% test accuracy. Training pipeline in PyTorch; inference runs fully client-side in the browser via ONNX + transformers.js.',
+    stack: ['DistilBERT', 'PyTorch', 'ONNX', 'React'],
     url: 'https://github.com/ManasPl/Hindi-sentiment-analysis',
-    demoUrl: null,
+    demoUrl: 'https://manaspl.github.io/Hindi-sentiment-analysis/',
   },
   {
     title: 'Aircraft Blade Defect Inspection',
