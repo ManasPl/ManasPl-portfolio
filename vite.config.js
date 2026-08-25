@@ -8,5 +8,4 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   base: '/ManasPl-portfolio/',
   plugins: [react()],
-  base: '/ManasPl-portfolio/',
 })
